@@ -1,0 +1,62 @@
+<!-- Ionic handles all the renderining of the componants
+as well as the functionallity of the RADIO buttons -->
+
+<!-- Uses Ionic/Angular's two-way data-binding so that if a value in {} or ''*ngIf' is updated
+in the program it will also be instantly updated on the screen  -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Rock, Paper, Scissors
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- Shows a list of radio buttons with the players choices -->
+  <ion-list radio-group>
+    <ion-list-header>
+      Make your play
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Rock</ion-label>
+      <!-- When a choice is clicked on, the play function is run with a parameter -->
+        <!-- The 'value' attribute is needed by ionic to render the component correctly -->
+      <ion-radio value="rock" (click)="play('rock')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Paper</ion-label>
+      <ion-radio value="paper" (click)="play('paper')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Scissors</ion-label>
+      <ion-radio value="scissors" (click)="play('scissors')"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-label id="computersChoice">
+    <p *ngIf="computersChoice != ''">Computer's choice - {{computersChoice}}</p>
+  </ion-label>
+
+  <ion-label id="result">
+    <!-- Will display 'WIN', 'Lose' or 'Draw' instantly when the boolean is set -->
+    <p *ngIf="win">WIN!!!</p>
+    <p *ngIf="draw">Draw</p>
+    <p *ngIf="lose">Lose</p>
+  </ion-label>
+  <ion-list id='prevScores'>
+    <ion-item>
+      <p>Won - {{numWon}}</p>
+    </ion-item>
+    <ion-item>
+      <p>Drawn - {{numDrawn}}</p>
+    </ion-item>
+    <ion-item>
+      <p>Lost - {{numLost}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,28 @@
+page-home {
+  // Uses  SASS
+
+  // Style the computer's choice bit
+  #computersChoice {
+    p{
+      font-size: 2em;
+      color: black;
+    }
+  }
+
+  // Style the win/lose/draw bit
+  #result {
+    p {
+      font-size: 3em;
+      color: red;
+    }
+  }
+
+  // Style the previous results bit
+  #prevScores {
+    p{
+      font-size: .5em;
+      color: grey;
+    }
+  }
+
+}
